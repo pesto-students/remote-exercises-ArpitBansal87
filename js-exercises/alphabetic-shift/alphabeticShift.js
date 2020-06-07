@@ -26,4 +26,3 @@ const alphabeticShift = (input) => {
 };
 
 export { alphabeticShift };
-// console.log(alphabeticShift("abc"));
