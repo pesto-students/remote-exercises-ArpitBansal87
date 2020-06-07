@@ -65,6 +65,15 @@ describe('timeWas', () => {
 
   it('should be 10 seconds ago', () => {
     const n = 1514764800; // Monday, January 1, 2018 12:00:00 AM
-    expect(timeWas(n - (10 * SECONDS), n)).toBe('10 seconds ago');
+    expect(timeWas(n - 10 * SECONDS, n)).toBe('10 seconds ago');
+  });
+
+  it('should throw error incase incorrect arguments are passed', () => {
+    expect(() => {
+      timeWas('now');
+    }).toThrow();
+    expect(() => {
+      timeWas(12, [11]);
+    }).toThrow();
   });
 });
