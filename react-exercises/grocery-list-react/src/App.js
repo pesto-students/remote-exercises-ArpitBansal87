@@ -48,7 +48,9 @@ class App extends React.Component {
   listItemClicked(item) {
     console.log(item);
     const newState = this.state.groceryList.map((ele) => {
-      if (ele.value === item) ele.selected = false;
+      if (ele.value === item){
+        ele.selected = ele.selected === 'true' ? 'false': 'true';
+      }
       return ele;
     });
     this.setState((state) => {
@@ -57,6 +59,9 @@ class App extends React.Component {
         groceryList: newState,
       };
     });
+  }
+  findCorrectClassName(selectedValue){
+    return selectedValue === 'true' ? "groceryListItem" : "redText"
   }
   handleChangeText(event) {
     const currentValue = event.target.value;
@@ -85,9 +90,9 @@ class App extends React.Component {
                 key={item.value}
                 id={item.value}
                 onClick={() => this.listItemClicked(item.value)}
-                className={item.selected === 'false' ? "redText groceryListItem": "normalText groceryListItem"}
+                className={this.findCorrectClassName(item.selected)}
               >
-                <span>{item.value}</span>{' '}
+                <span>{item.value}</span>
                 <span>{item.quantity > 1 ? `x` + item.quantity : ''}</span>
               </li>
             );

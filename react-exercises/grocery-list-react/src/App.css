@@ -4,6 +4,12 @@
 div#outer-div {
   padding:20px;
 }
+.redText{
+  color: red;
+  display: inline;
+  padding: 20px;
+  border: 1px solid;
+}
 ul {
   list-style: none;
   padding: 20px;
