@@ -1,0 +1,15 @@
+div.gameBoard{
+    border: solid brown 10px;
+    position: absolute;
+}
+div.snakeObject > div {
+    position: absolute;
+    background-color: cyan;
+}
+div.snakeObject > div.snakeHead {
+    background-color: darkmagenta;
+}
+div.foodElement {
+    position: absolute;
+    background-color: darkgreen;
+}
