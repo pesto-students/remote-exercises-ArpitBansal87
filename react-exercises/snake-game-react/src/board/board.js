@@ -172,7 +172,7 @@ const GameBoard = (props) => {
       <h1>Snake</h1>
       <h2>Current Score: {score}</h2>
       <Instructions isGameOver = {continuePlaying}></Instructions>
-      <button style={{ float: 'right' }} onClick={startGame}>Start Game</button>      
+      <button onClick={startGame}>Start Game</button>      
     </>
   );
 };
